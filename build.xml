@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="jar" name="RCRSViewer">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="RCRSViewer.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="lib/OBJLoader/OBJLoader.jar"/>
+        <pathelement location="lib/jfreechart/jcommon-1.0.23.jar"/>
+        <pathelement location="lib/jfreechart/jfreechart-1.0.19.jar"/>
+        <pathelement location="lib/log4j/log4j-1.2.15.jar"/>
+        <pathelement location="lib/peasycam/peasycam.jar"/>
+        <pathelement location="lib/processing/linux64/core.jar"/>
+        <pathelement location="lib/processing/linux64/gluegen-rt.jar"/>
+        <pathelement location="lib/processing/linux64/gluegen-rt-natives-linux-amd64.jar"/>
+        <pathelement location="lib/processing/linux64/jogl-all.jar"/>
+        <pathelement location="lib/processing/linux64/jogl-all-natives-linux-amd64.jar"/>
+        <pathelement location="lib/rescuecore2/clear.jar"/>
+        <pathelement location="lib/rescuecore2/collapse.jar"/>
+        <pathelement location="lib/rescuecore2/commons-logging-1.1.1.jar"/>
+        <pathelement location="lib/rescuecore2/dom4j.jar"/>
+        <pathelement location="lib/rescuecore2/gis2.jar"/>
+        <pathelement location="lib/rescuecore2/handy.jar"/>
+        <pathelement location="lib/rescuecore2/human.jar"/>
+        <pathelement location="lib/rescuecore2/ignition.jar"/>
+        <pathelement location="lib/rescuecore2/jaxen-1.1.1.jar"/>
+        <pathelement location="lib/rescuecore2/jcommon-1.0.16.jar"/>
+        <pathelement location="lib/rescuecore2/jfreechart-1.0.13.jar"/>
+        <pathelement location="lib/rescuecore2/jscience-4.3.jar"/>
+        <pathelement location="lib/rescuecore2/jsi-1.0b2p1.jar"/>
+        <pathelement location="lib/rescuecore2/jts-1.11.jar"/>
+        <pathelement location="lib/rescuecore2/junit-4.5.jar"/>
+        <pathelement location="lib/rescuecore2/kernel.jar"/>
+        <pathelement location="lib/rescuecore2/log4j-1.2.15.jar"/>
+        <pathelement location="lib/rescuecore2/maps.jar"/>
+        <pathelement location="lib/rescuecore2/misc.jar"/>
+        <pathelement location="lib/rescuecore2/rescuecore.jar"/>
+        <pathelement location="lib/rescuecore2/rescuecore2.jar"/>
+        <pathelement location="lib/rescuecore2/resq-fire.jar"/>
+        <pathelement location="lib/rescuecore2/sample.jar"/>
+        <pathelement location="lib/rescuecore2/standard.jar"/>
+        <pathelement location="lib/rescuecore2/traffic3.jar"/>
+        <pathelement location="lib/rescuecore2/trove-0.1.8.jar"/>
+        <pathelement location="lib/rescuecore2/uncommons-maths-1.2.jar"/>
+        <pathelement location="lib/rescuecore2/xml-0.0.6.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    	<delete file="rcrsviewer3d.jar"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="RCRSViewer.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="InformationManager">
+        <java classname="sun.applet.AppletViewer" dir="." failonerror="true" fork="yes">
+            <arg line="InformationManager.html"/>
+            <classpath refid="RCRSViewer.classpath"/>
+        </java>
+    </target>
+    <target name="RCRSViewer">
+        <java classname="sun.applet.AppletViewer" dir="." failonerror="true" fork="yes">
+            <arg line="RCRSViewer.html"/>
+            <classpath refid="RCRSViewer.classpath"/>
+        </java>
+    </target>
+    <target name="RCRSViewer (1)">
+        <java classname="main.RCRSViewer" failonerror="true" fork="yes">
+            <classpath refid="RCRSViewer.classpath"/>
+        </java>
+    </target>
+    <target name="DrawLineChart">
+        <java classname="sun.applet.AppletViewer" dir="." failonerror="true" fork="yes">
+            <arg line="DrawLineChart.html"/>
+            <classpath refid="RCRSViewer.classpath"/>
+        </java>
+    </target>
+    <target name="RCRSViewerMain">
+        <java classname="main.RCRSViewerMain" failonerror="true" fork="yes">
+            <classpath refid="RCRSViewer.classpath"/>
+        </java>
+    </target>
+              	
+    <target name="jar" depends="build">
+        <jar destfile="rcrsviewer3d.jar">
+            <manifest>
+                <attribute name="Main-Class" value="main.RCRSViewerMain"/>
+                <attribute name="Class-Path" value=". lib/OBJLoader/OBJLoader.jar lib/jfreechart/jcommon-1.0.23.jar lib/jfreechart/jfreechart-1.0.19.jar lib/log4j/log4j-1.2.15.jar lib/peasycam/peasycam.jar lib/processing/linux64/core.jar lib/processing/linux64/gluegen-rt.jar lib/processing/linux64/gluegen-rt-natives-linux-amd64.jar lib/processing/linux64/jogl-all.jar lib/processing/linux64/jogl-all-natives-linux-amd64.jar lib/rescuecore2/clear.jar lib/rescuecore2/collapse.jar lib/rescuecore2/commons-logging-1.1.1.jar lib/rescuecore2/dom4j.jar lib/rescuecore2/gis2.jar lib/rescuecore2/handy.jar lib/rescuecore2/human.jar lib/rescuecore2/ignition.jar lib/rescuecore2/jaxen-1.1.1.jar lib/rescuecore2/jcommon-1.0.16.jar lib/rescuecore2/jfreechart-1.0.13.jar lib/rescuecore2/jscience-4.3.jar lib/rescuecore2/jsi-1.0b2p1.jar lib/rescuecore2/jts-1.11.jar lib/rescuecore2/junit-4.5.jar lib/rescuecore2/kernel.jar lib/rescuecore2/log4j-1.2.15.jar lib/rescuecore2/maps.jar lib/rescuecore2/misc.jar lib/rescuecore2/rescuecore.jar lib/rescuecore2/rescuecore2.jar lib/rescuecore2/resq-fire.jar lib/rescuecore2/sample.jar lib/rescuecore2/standard.jar lib/rescuecore2/traffic3.jar lib/rescuecore2/trove-0.1.8.jar lib/rescuecore2/uncommons-maths-1.2.jar lib/rescuecore2/xml-0.0.6.jar"/>
+            </manifest>
+            <fileset dir="bin"/>
+        </jar>
+    </target>
+</project>
