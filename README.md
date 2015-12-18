@@ -20,18 +20,22 @@ java -jar rcrsviewer3d.jar
 - Quit
   - e
   - q
------
+
+
 - Display graph
   - g
------
+
+
 - Pause
   - t
------
+
+
 - Switch to 2DMode
   - 2
 - Switch to 3DMOde
   - 3
------
+
+
 - Zoom out
   - Page Up
 - Zoom in
