@@ -2,7 +2,7 @@
 ## How to launch
 Please initialize config using the script when run first time.
 ```Shell
-./setup_config.sh
+ant
 ```
 
 Launch viewer
@@ -11,6 +11,27 @@ java -jar rcrsviewer3d.jar
 ```
 
 ## key bind
+- Open the setting
+  - p
+- Connect to server (You must set host and port in the setting.)
+  - c
+- Playback a log file
+  - l
+- Quit
+  - e
+  - q
+-----
+- Display graph
+  - g
+-----
+- Pause
+  - t
+-----
+- Switch to 2DMode
+  - 2
+- Switch to 3DMOde
+  - 3
+-----
 - Zoom out
   - Page Up
 - Zoom in
@@ -18,7 +39,7 @@ java -jar rcrsviewer3d.jar
 - Camera angle
   - [arrow keys]
 - Camera location
-  - W
-  - A
-  - S
-  - D
+  - w
+  - a
+  - s
+  - d
