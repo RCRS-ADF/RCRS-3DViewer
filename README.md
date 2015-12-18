@@ -11,15 +11,15 @@ java -jar rcrsviewer3d.jar
 ```
 
 ## key bind
-- Open the setting
-  - p
-- Connect to server (You must set host and port in the setting.)
-  - c
-- Playback a log file
-  - l
-- Quit
-  - e
-  - q
+- Open the setting  
+  p
+- Connect to server (You must set host and port in the setting.)  
+  c
+- Playback a log file  
+  l
+- Quit  
+  e  
+  q
 
 
 - Display graph
