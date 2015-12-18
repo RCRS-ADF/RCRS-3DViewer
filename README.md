@@ -22,28 +22,28 @@ java -jar rcrsviewer3d.jar
   q
 
 
-- Display graph
-  - g
+- Display graph  
+  g
 
 
-- Pause
-  - t
+- Pause  
+  t
 
 
-- Switch to 2DMode
-  - 2
-- Switch to 3DMOde
-  - 3
+- Switch to 2DMode  
+  2
+- Switch to 3DMOde  
+  3
 
 
-- Zoom out
-  - Page Up
-- Zoom in
-  - Page Down
-- Camera angle
-  - [arrow keys]
-- Camera location
-  - w
-  - a
-  - s
-  - d
+- Zoom out  
+  Page Up
+- Zoom in  
+  Page Down
+- Camera angle  
+  [arrow keys]
+- Camera location  
+  w  
+  a  
+  s  
+  d
